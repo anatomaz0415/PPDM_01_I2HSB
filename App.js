@@ -10,7 +10,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // Importando as telas que vamos criar
-import { TelaTaverna } from './src/screens/TelaTaverna';
+import TelaTaverna from './src/screens/TelaTaverna';
 import { TelaPergaminho } from './src/screens/TelaPergaminho';
 
 const Stack = createStackNavigator();
