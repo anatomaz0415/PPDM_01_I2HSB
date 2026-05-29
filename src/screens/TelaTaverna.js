@@ -1,9 +1,6 @@
-//npm i react-native-screens react-native-safe-area-context 
-// react-native-gesture-handler 
-//npm install @react-navigation/native @react-navigation/stack 
-import React, {useState} from 'react';
-import {View, Text, Flatlist,
-TouchableOpacity, Stylesheet, Alert    
+import React, { useState } from 'react';
+import { View, Text, FlatList,
+TouchableOpacity, StyleSheet, Alert
 } from 'react-native';
 
 export default function TelaTaverna({navigation}){
@@ -20,25 +17,26 @@ export default function TelaTaverna({navigation}){
     return(
       <View style={styles.container}>
           <Text style={styles.titulo}>Quadro de Missões</Text>
-          //relembrando manipulação de listas na interface
-          <Flatlist
+          
+          <FlatList
           data={missoes}
           keyExtractor={item => item.id}
-          renderItem={ ({ item }) => (
-            <TouchableOpacity 
-            style={styles.cartaoMissao}
+          renderItem={({ item }) => (
+            <TouchableOpacity
+              style={styles.cartaoMissao}
+
             onPress={() => {
               navigation.navigate('Pergaminho', {missaoSelecionada: item})
             }}
             onLongPress={() => lidarComToqueLongo(item.titulo)}
-            >
+          >
               <Text style={styles.textoMissao}>{item.titulo}</Text>
               <Text style={styles.textoXp}>XP: {item.xp}</Text>
+
 
             </TouchableOpacity>
           )}
           />
-          //botao para criar uma missao nova; navega sem passar parâmetros
         <TouchableOpacity
         style={styles.botaoNovaMissao}
         onPress={() => navigation.navigate('Pergaminho')}
@@ -51,7 +49,7 @@ export default function TelaTaverna({navigation}){
     );
 }
 
-const styles = Stylesheet.create({
+const styles = StyleSheet.create({
     container:{
       flex: 1,
       backgroundColor: '#f5f5dc',
@@ -84,7 +82,7 @@ const styles = Stylesheet.create({
       marginTop: 5
     },
     botaoNovaMissao:{
-      backgroundColor: '#',
+      backgroundColor: '#8b4513',
       padding: 15,
       borderRadius: 8,
       alignItems: 'center',
