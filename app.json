@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "𝕲𝖆𝖒𝖊𝖗 𝕿𝖔-𝕯𝖔 𝕷𝖎𝖘𝖙✍️",
+    "slug": "Gamer_ToDo_List",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/pixel-parchment-scroll-stockcake.jpg",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/giphy(3).gif",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/pixel-parchment-scroll-stockcake.jpg",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.anonymous.Gamer_ToDo_List"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
