@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Alert, StyleSheet } from 'react-native';
 
-    // Recebemos 'route' e 'navigation' por padrão do React Navigation
-    export function TelaPergaminho({ route, navigation }) {
-      
-      // 2.2.5 Lendo os parâmetros recebidos da Tela 1 (se existirem)
-    const missaoRecebida = route.params?.missaoSelecionada;
+// Recebemos 'route' e 'navigation' por padrão do React Navigation
+export function TelaPergaminho({ route, navigation }) {
+  
+  // 2.2.5 Lendo os parâmetros recebidos da Tela 1 (se existirem)
+  const missaoRecebida = route.params?.missaoSelecionada;
 
   // 2.2.3 Entrada, processamento e saída de dados: 
   // Estados que vão guardar o que o usuário digita (Entrada)
   // Se recebemos uma missão, o campo já vem preenchido; se não, fica vazio.
-    const [titulo, setTitulo] = useState(missaoRecebida ? missaoRecebida.titulo : '');  
-    const [xp, setXp] = useState(missaoRecebida ? missaoRecebida.xp.toString() : '');     
+  const [titulo, setTitulo] = useState(missaoRecebida ? missaoRecebida.titulo : '');
+  const [xp, setXp] = useState(missaoRecebida ? missaoRecebida.xp.toString() : '');
 
   // 2.2.1 Tratamento de eventos e exceções: Função acionada pelo evento de clique no botão
-    const salvarMissao = () => {
-      try {
-        // PROCESSAMENTO: Validando se os campos estão em branco
-        if (titulo.trim() === '' || xp.trim() === '') {
-          //o trim() remove espaços em branco para evitar que o usuário insira apenas espaços e isso seja considerado válido
-          // Disparando uma exceção customizada caso falte dados
-          throw new Error("Os campos Título e XP não podem ficar vazios!");
-        }
+  const salvarMissao = () => {
+    try {
+      // PROCESSAMENTO: Validando se os campos estão em branco
+      if (titulo.trim() === '' || xp.trim() === '') {
+        //o trim() remove espaços em branco para evitar que o usuário insira apenas espaços e isso seja considerado válido
+        // Disparando uma exceção customizada caso falte dados
+        throw new Error("Os campos Título e XP não podem ficar vazios!");
+      }
 
       // PROCESSAMENTO: Garantindo que o XP seja um número válido
       const numeroXp = parseInt(xp);
